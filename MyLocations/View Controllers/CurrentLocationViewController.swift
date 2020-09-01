@@ -73,7 +73,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     // MARK: - CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("didFailWithError \(error.localizedDescription)")
+//        print("didFailWithError \(error.localizedDescription)")
         
         if (error as NSError).code == CLError.locationUnknown.rawValue {
             return
@@ -86,7 +86,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let newLocation = locations.last!
-        print("didUpdateLocations \(newLocation)")
+//        print("didUpdateLocations \(newLocation)")
         
         if newLocation.timestamp.timeIntervalSinceNow < -5 {
             return
@@ -107,7 +107,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             location = newLocation
             
             if newLocation.horizontalAccuracy <= locationManager.desiredAccuracy {
-                print("*** We're done!")
+//                print("*** We're done!")
                 stopLocationManager()
                 
                 if distance > 0 {
@@ -118,7 +118,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             updateLabels()
             
             if !performingReverseGeocoding {
-                print("*** Going to geocode")
+//                print("*** Going to geocode")
                 
                 performingReverseGeocoding = true
                 
@@ -139,7 +139,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             let timeInterval = newLocation.timestamp.timeIntervalSince(location!.timestamp)
             
             if timeInterval > 10 {
-                print("*** Force done!")
+//                print("*** Force done!")
                 stopLocationManager()
                 updateLabels()
             }
@@ -260,7 +260,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     }
     
     @objc private func didTimeOut() {
-        print("*** Time out")
+//        print("*** Time out")
         
         if location == nil {
             stopLocationManager()
