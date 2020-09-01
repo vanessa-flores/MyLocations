@@ -43,8 +43,8 @@
 		A3B5C8FF24FEA83E00864F73 = {
 			isa = PBXGroup;
 			children = (
-				A3B5C92124FEA88400864F73 /* README.md */,
 				A3B5C90A24FEA83E00864F73 /* MyLocations */,
+				A3B5C92124FEA88400864F73 /* README.md */,
 				A3B5C90924FEA83E00864F73 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -60,16 +60,48 @@
 		A3B5C90A24FEA83E00864F73 /* MyLocations */ = {
 			isa = PBXGroup;
 			children = (
-				A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */,
-				A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */,
-				A3B5C90F24FEA83E00864F73 /* FirstViewController.swift */,
-				A3B5C91124FEA83E00864F73 /* SecondViewController.swift */,
-				A3B5C91324FEA83E00864F73 /* Main.storyboard */,
-				A3B5C91624FEA84100864F73 /* Assets.xcassets */,
-				A3B5C91824FEA84100864F73 /* LaunchScreen.storyboard */,
+				A3B5C92224FEA9C400864F73 /* Application Delegate */,
+				A3B5C92324FEA9D300864F73 /* View Controllers */,
+				A3B5C92524FEA9EF00864F73 /* Storyboards */,
+				A3B5C92424FEA9E400864F73 /* Assets */,
 				A3B5C91B24FEA84100864F73 /* Info.plist */,
 			);
 			path = MyLocations;
+			sourceTree = "<group>";
+		};
+		A3B5C92224FEA9C400864F73 /* Application Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */,
+				A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */,
+			);
+			path = "Application Delegate";
+			sourceTree = "<group>";
+		};
+		A3B5C92324FEA9D300864F73 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5C90F24FEA83E00864F73 /* FirstViewController.swift */,
+				A3B5C91124FEA83E00864F73 /* SecondViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		A3B5C92424FEA9E400864F73 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5C91624FEA84100864F73 /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A3B5C92524FEA9EF00864F73 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				A3B5C91324FEA83E00864F73 /* Main.storyboard */,
+				A3B5C91824FEA84100864F73 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
