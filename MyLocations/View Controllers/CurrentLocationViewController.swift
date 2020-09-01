@@ -52,9 +52,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             return
         }
         
-        locationManager.delegate = self
-        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
-        locationManager.startUpdatingLocation()
+        startLocationManager()
+        updateLabels()
     }
     
     // MARK: - CLLocationManagerDelegate
@@ -76,6 +75,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
         print("didUpdateLocations \(newLocation)")
         
         location = newLocation
+        lastLocationError = nil
         updateLabels()
     }
     
@@ -121,6 +121,15 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
             
             messageLabel.text = statusMessage
+        }
+    }
+    
+    private func startLocationManager() {
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+            updatingLocation = true
         }
     }
     
