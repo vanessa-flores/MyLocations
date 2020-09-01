@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class CurrentLocationViewController: UIViewController {
+class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate {
     
     // MARK: - Outlets
     
@@ -18,6 +19,10 @@ class CurrentLocationViewController: UIViewController {
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var tagButton: UIButton!
     @IBOutlet private weak var getButton: UIButton!
+    
+    // MARK: - Properties
+    
+    let locationManager = CLLocationManager()
     
     // MARK: - Lifecycle
 
@@ -29,7 +34,20 @@ class CurrentLocationViewController: UIViewController {
     // MARK: - Actions
     
     @IBAction private func getLocation() {
-        // do nothing yet
+        locationManager.delegate = self
+        locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+        locationManager.startUpdatingLocation()
+    }
+    
+    // MARK: - CLLocationManagerDelegate
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("didFailWithError \(error.localizedDescription)")
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        let newLocation = locations.last!
+        print("didUpdateLocations \(newLocation)")
     }
 }
 
