@@ -29,11 +29,11 @@ class LocationDetailsViewController: UITableViewController {
     // MARK: - Actions
     
     @IBAction private func cancel() {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     @IBAction private func done() {
-        
+        navigationController?.popViewController(animated: true)
     }
     
     private func selectCategory() {
