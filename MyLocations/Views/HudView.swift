@@ -27,6 +27,19 @@ class HudView: UIView {
             let imagePoint = CGPoint(x: center.x - round(image.size.width / 2), y: center.y - round(image.size.height / 2) - boxHeight / 8)
             image.draw(at: imagePoint)
         }
+        
+        // Draw the text
+        let attributes = [
+            NSAttributedString.Key.font: UIFont.systemFont(ofSize: 16),
+            NSAttributedString.Key.foregroundColor: UIColor.white
+        ]
+        
+        let textSize = text.size(withAttributes: attributes)
+        
+        let textPoint = CGPoint(x: center.x - round(textSize.width / 2),
+                                y: center.y - round(textSize.height / 2) + boxHeight / 4)
+        
+        text.draw(at: textPoint, withAttributes: attributes)
     }
     
     class func hud(inView view: UIView, animated: Bool) -> HudView {
