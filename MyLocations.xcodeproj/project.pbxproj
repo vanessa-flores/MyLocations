@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		A33FEE0C2500205900316B54 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE0B2500205900316B54 /* HudView.swift */; };
 		A33FEE0F25002DA100316B54 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE0E25002DA100316B54 /* Functions.swift */; };
+		A33FEE1225004A8B00316B54 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE1025004A8B00316B54 /* DataModel.xcdatamodeld */; };
+		A33FEE1625004D2700316B54 /* Location+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE1425004D2700316B54 /* Location+CoreDataClass.swift */; };
+		A33FEE1725004D2700316B54 /* Location+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE1525004D2700316B54 /* Location+CoreDataProperties.swift */; };
 		A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */; };
 		A3B5C90E24FEA83E00864F73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */; };
 		A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90F24FEA83E00864F73 /* CurrentLocationViewController.swift */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		A33FEE0B2500205900316B54 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
 		A33FEE0E25002DA100316B54 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
+		A33FEE1125004A8B00316B54 /* DataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = DataModel.xcdatamodel; sourceTree = "<group>"; };
+		A33FEE1425004D2700316B54 /* Location+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataClass.swift"; sourceTree = "<group>"; };
+		A33FEE1525004D2700316B54 /* Location+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Location+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		A3B5C90824FEA83E00864F73 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +62,23 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		A33FEE1325004A9900316B54 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A33FEE0E25002DA100316B54 /* Functions.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A33FEE1825004D3200316B54 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				A33FEE1425004D2700316B54 /* Location+CoreDataClass.swift */,
+				A33FEE1525004D2700316B54 /* Location+CoreDataProperties.swift */,
+			);
+			path = "Data Model";
+			sourceTree = "<group>";
+		};
 		A3B5C8FF24FEA83E00864F73 = {
 			isa = PBXGroup;
 			children = (
@@ -80,9 +103,11 @@
 				A3B5C92324FEA9D300864F73 /* View Controllers */,
 				A33FEE0D2500206700316B54 /* Views */,
 				A3B5C92524FEA9EF00864F73 /* Storyboards */,
+				A33FEE1825004D3200316B54 /* Data Model */,
+				A33FEE1325004A9900316B54 /* Shared */,
 				A3B5C92424FEA9E400864F73 /* Assets */,
+				A33FEE1025004A8B00316B54 /* DataModel.xcdatamodeld */,
 				A3B5C91B24FEA84100864F73 /* Info.plist */,
-				A33FEE0E25002DA100316B54 /* Functions.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -197,11 +222,14 @@
 			files = (
 				A3B5C92924FFF00B00864F73 /* CategoryPickerViewController.swift in Sources */,
 				A3B5C91224FEA83E00864F73 /* SecondViewController.swift in Sources */,
+				A33FEE1725004D2700316B54 /* Location+CoreDataProperties.swift in Sources */,
 				A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */,
 				A33FEE0F25002DA100316B54 /* Functions.swift in Sources */,
 				A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */,
 				A3B5C90E24FEA83E00864F73 /* SceneDelegate.swift in Sources */,
+				A33FEE1225004A8B00316B54 /* DataModel.xcdatamodeld in Sources */,
 				A33FEE0C2500205900316B54 /* HudView.swift in Sources */,
+				A33FEE1625004D2700316B54 /* Location+CoreDataClass.swift in Sources */,
 				A3B5C92724FFD39C00864F73 /* LocationDetailsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -400,6 +428,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A33FEE1025004A8B00316B54 /* DataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A33FEE1125004A8B00316B54 /* DataModel.xcdatamodel */,
+			);
+			currentVersion = A33FEE1125004A8B00316B54 /* DataModel.xcdatamodel */;
+			path = DataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = A3B5C90024FEA83E00864F73 /* Project object */;
 }
