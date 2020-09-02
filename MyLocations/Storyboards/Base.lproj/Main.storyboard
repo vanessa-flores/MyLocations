@@ -215,6 +215,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="addressLabel" destination="HYk-ZJ-4i6" id="ryh-qw-AKF"/>
                         <outlet property="categoryLabel" destination="JAV-nJ-Hmo" id="AaX-eO-sc5"/>
                         <outlet property="dateLabel" destination="k23-Zy-QWH" id="V7C-aO-aJF"/>
                         <outlet property="descriptionTextView" destination="fQs-DM-1WP" id="LQu-K7-AfP"/>
