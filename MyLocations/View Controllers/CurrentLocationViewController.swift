@@ -280,5 +280,20 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             updateLabels()
         }
     }
+    
+    // MARK: - Navigation
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "TagLocation" {
+            let controller = segue.destination as! LocationDetailsViewController
+            
+            guard let coordinate = location?.coordinate else {
+                return
+            }
+            
+            controller.coordinate = coordinate
+            controller.placemark = placemark
+        }
+    }
 }
 
