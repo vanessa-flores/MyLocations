@@ -62,14 +62,6 @@ class LocationDetailsViewController: UITableViewController {
         navigationController?.popViewController(animated: true)
     }
     
-    private func selectCategory() {
-        
-    }
-    
-    private func addPhoto() {
-        
-    }
-    
     // MARK: - Helpers
     
     private func string(from placemark: CLPlacemark) -> String {
