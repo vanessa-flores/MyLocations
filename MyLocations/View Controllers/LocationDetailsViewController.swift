@@ -81,9 +81,13 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     @IBAction private func done() {
-//        navigationController?.popViewController(animated: true)
         let hudView = HudView.hud(inView: navigationController!.view, animated: true)
         hudView.text = "Tagged"
+        
+        let delayInSeconds = 0.6
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds, execute: {
+            self.navigationController?.popViewController(animated: true)
+        })
     }
     
     @IBAction func categoryPickerDidPickCategory(_ segue: UIStoryboardSegue) {
