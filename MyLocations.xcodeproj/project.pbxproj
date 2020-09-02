@@ -73,6 +73,7 @@
 		A33FEE1825004D3200316B54 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				A33FEE1025004A8B00316B54 /* DataModel.xcdatamodeld */,
 				A33FEE1425004D2700316B54 /* Location+CoreDataClass.swift */,
 				A33FEE1525004D2700316B54 /* Location+CoreDataProperties.swift */,
 			);
@@ -106,7 +107,6 @@
 				A33FEE1825004D3200316B54 /* Data Model */,
 				A33FEE1325004A9900316B54 /* Shared */,
 				A3B5C92424FEA9E400864F73 /* Assets */,
-				A33FEE1025004A8B00316B54 /* DataModel.xcdatamodeld */,
 				A3B5C91B24FEA84100864F73 /* Info.plist */,
 			);
 			path = MyLocations;
