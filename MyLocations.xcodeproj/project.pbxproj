@@ -15,6 +15,7 @@
 		A3B5C91724FEA84100864F73 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3B5C91624FEA84100864F73 /* Assets.xcassets */; };
 		A3B5C91A24FEA84100864F73 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A3B5C91824FEA84100864F73 /* LaunchScreen.storyboard */; };
 		A3B5C92724FFD39C00864F73 /* LocationDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C92624FFD39C00864F73 /* LocationDetailsViewController.swift */; };
+		A3B5C92924FFF00B00864F73 /* CategoryPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C92824FFF00B00864F73 /* CategoryPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		A3B5C91B24FEA84100864F73 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A3B5C92124FEA88400864F73 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		A3B5C92624FFD39C00864F73 /* LocationDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationDetailsViewController.swift; sourceTree = "<group>"; };
+		A3B5C92824FFF00B00864F73 /* CategoryPickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPickerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +88,7 @@
 				A3B5C90F24FEA83E00864F73 /* CurrentLocationViewController.swift */,
 				A3B5C91124FEA83E00864F73 /* SecondViewController.swift */,
 				A3B5C92624FFD39C00864F73 /* LocationDetailsViewController.swift */,
+				A3B5C92824FFF00B00864F73 /* CategoryPickerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3B5C92924FFF00B00864F73 /* CategoryPickerViewController.swift in Sources */,
 				A3B5C91224FEA83E00864F73 /* SecondViewController.swift in Sources */,
 				A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */,
 				A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */,
