@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A33FEE0C2500205900316B54 /* HudView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE0B2500205900316B54 /* HudView.swift */; };
+		A33FEE0F25002DA100316B54 /* Functions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE0E25002DA100316B54 /* Functions.swift */; };
 		A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */; };
 		A3B5C90E24FEA83E00864F73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */; };
 		A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90F24FEA83E00864F73 /* CurrentLocationViewController.swift */; };
@@ -21,6 +22,7 @@
 
 /* Begin PBXFileReference section */
 		A33FEE0B2500205900316B54 /* HudView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HudView.swift; sourceTree = "<group>"; };
+		A33FEE0E25002DA100316B54 /* Functions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Functions.swift; sourceTree = "<group>"; };
 		A3B5C90824FEA83E00864F73 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 				A3B5C92524FEA9EF00864F73 /* Storyboards */,
 				A3B5C92424FEA9E400864F73 /* Assets */,
 				A3B5C91B24FEA84100864F73 /* Info.plist */,
+				A33FEE0E25002DA100316B54 /* Functions.swift */,
 			);
 			path = MyLocations;
 			sourceTree = "<group>";
@@ -195,6 +198,7 @@
 				A3B5C92924FFF00B00864F73 /* CategoryPickerViewController.swift in Sources */,
 				A3B5C91224FEA83E00864F73 /* SecondViewController.swift in Sources */,
 				A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */,
+				A33FEE0F25002DA100316B54 /* Functions.swift in Sources */,
 				A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */,
 				A3B5C90E24FEA83E00864F73 /* SceneDelegate.swift in Sources */,
 				A33FEE0C2500205900316B54 /* HudView.swift in Sources */,
