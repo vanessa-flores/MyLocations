@@ -144,7 +144,7 @@ class LocationDetailsViewController: UITableViewController {
             text += s
         }
         
-        return text
+        return text != "" ? text : "No Address Found"
     }
     
     private func format(date: Date) -> String {
