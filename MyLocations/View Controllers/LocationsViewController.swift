@@ -21,11 +21,12 @@ class LocationsViewController: UITableViewController {
         let entity = Location.entity()
         fetchRequest.entity = entity
         
-        let sortDescriptor = NSSortDescriptor(key: "date", ascending: true)
-        fetchRequest.sortDescriptors = [sortDescriptor]
+        let sort1 = NSSortDescriptor(key: "category", ascending: true)
+        let sort2 = NSSortDescriptor(key: "date", ascending: true)
+        fetchRequest.sortDescriptors = [sort1, sort2]
         fetchRequest.fetchBatchSize = 20
         
-        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: nil, cacheName: "Locations")
+        let fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext, sectionNameKeyPath: "category", cacheName: "Locations")
         
         fetchedResultsController.delegate = self
         
@@ -43,6 +44,16 @@ class LocationsViewController: UITableViewController {
     }
     
     // MARK: - UITableViewDataSource
+    
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return fetchedResultsController.sections!.count
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = fetchedResultsController.sections![section]
+        
+        return sectionInfo.name
+    }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionInfo = fetchedResultsController.sections![section]
