@@ -42,7 +42,7 @@ class LocationDetailsViewController: UITableViewController {
         didSet {
             if let location = locationToEdit {
                 descriptionText = location.locationDescription
-                categoryName = location.cateogry
+                categoryName = location.category
                 date = location.date
                 coordinate = CLLocationCoordinate2DMake(location.latitude, location.longitude)
                 placemark = location.placemark
@@ -114,7 +114,7 @@ class LocationDetailsViewController: UITableViewController {
         }
         
         location.locationDescription = descriptionTextView.text
-        location.cateogry = categoryName
+        location.category = categoryName
         location.latitude = coordinate.latitude
         location.longitude = coordinate.longitude
         location.date = date
