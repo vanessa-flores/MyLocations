@@ -106,9 +106,9 @@ class LocationsViewController: UITableViewController {
         }
     }
     
-    deinit {
-        fetchedResultsController.delegate = nil
-    }
+//    deinit {
+//        fetchedResultsController.delegate = nil
+//    }
 }
 
 // MARK: - NSFetchedResultsControllerDelegate
