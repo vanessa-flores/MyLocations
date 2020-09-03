@@ -140,7 +140,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
                     self.lastGeocodingError = error
                     
                     if error == nil, let p = placemarks, !p.isEmpty {
-                        self.placemark = p.last
+//                        self.placemark = p.last
                     } else {
                         self.placemark = nil
                     }
