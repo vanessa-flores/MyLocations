@@ -440,13 +440,16 @@
         <!--Map-->
         <scene sceneID="exT-GA-K14">
             <objects>
-                <viewController id="qyk-OZ-lwA" sceneMemberID="viewController">
+                <viewController id="qyk-OZ-lwA" customClass="MapViewController" customModule="MyLocations" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wKX-sh-3wP">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" showsUserLocation="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gE1-Hc-DM0">
                                 <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <connections>
+                                    <outlet property="delegate" destination="qyk-OZ-lwA" id="W5Q-IZ-8Bn"/>
+                                </connections>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -459,9 +462,20 @@
                         <viewLayoutGuide key="safeArea" id="YOD-hp-8hl"/>
                     </view>
                     <navigationItem key="navigationItem" title="Map" id="nWb-XK-ezC">
-                        <barButtonItem key="leftBarButtonItem" title="Locations" id="1hN-at-Yex"/>
-                        <barButtonItem key="rightBarButtonItem" title="User" id="bcO-vs-CIT"/>
+                        <barButtonItem key="leftBarButtonItem" title="Locations" id="1hN-at-Yex">
+                            <connections>
+                                <action selector="showLocations" destination="qyk-OZ-lwA" id="433-18-Jm1"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="User" id="bcO-vs-CIT">
+                            <connections>
+                                <action selector="showUser" destination="qyk-OZ-lwA" id="wBw-VJ-BYd"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="mapView" destination="gE1-Hc-DM0" id="viY-oG-gPW"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nn-0y-BGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
