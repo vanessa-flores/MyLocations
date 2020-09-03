@@ -18,8 +18,18 @@ class MapViewController: UIViewController {
     
     // MARK: - Properties
     
-    var managedObjectContext: NSManagedObjectContext!
     var locations = [Location]()
+    
+    var managedObjectContext: NSManagedObjectContext! {
+        didSet {
+            NotificationCenter.default.addObserver(forName: Notification.Name.NSManagedObjectContextObjectsDidChange, object: managedObjectContext, queue: OperationQueue.main) { _ in
+                
+                if self.isViewLoaded {
+                    self.updateLocations()
+                }
+            }
+        }
+    }
     
     // MARK: - Lifecycle
 
@@ -47,15 +57,21 @@ class MapViewController: UIViewController {
     
     // MARK: - Helpers
     
-    private func updateLocations() {
-        mapView.removeAnnotations(locations)
-        
+    private func updateLocations(_ locations: [Location]? = nil) {
         let entity = Location.entity()
         let fetchRequest = NSFetchRequest<Location>()
         fetchRequest.entity = entity
         
-        locations = try! managedObjectContext.fetch(fetchRequest)
-        mapView.addAnnotations(locations)
+        if let newLocations = locations {
+            mapView.removeAnnotations(newLocations)
+            self.locations = try! managedObjectContext.fetch(fetchRequest)
+            mapView.addAnnotations(newLocations)
+        } else {
+            mapView.removeAnnotations(self.locations)
+            
+            self.locations = try! managedObjectContext.fetch(fetchRequest)
+            mapView.addAnnotations(self.locations)
+        }
     }
     
     private func region(for annotations: [MKAnnotation]) -> MKCoordinateRegion {
