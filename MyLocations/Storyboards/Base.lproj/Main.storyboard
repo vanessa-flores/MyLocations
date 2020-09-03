@@ -388,12 +388,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="q0D-jB-O5s">
-                                <rect key="frame" x="0.0" y="28" width="375" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="LocationCell" rowHeight="58" id="q0D-jB-O5s">
+                                <rect key="frame" x="0.0" y="28" width="375" height="58"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="q0D-jB-O5s" id="oxE-Yu-vQH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tvL-xX-h3a">
+                                            <rect key="frame" x="16" y="11" width="343" height="21"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Address" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0sM-Sc-rZM">
+                                            <rect key="frame" x="16" y="36" width="343" height="11"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="0sM-Sc-rZM" firstAttribute="top" secondItem="tvL-xX-h3a" secondAttribute="bottom" constant="4" id="51a-DX-QHf"/>
+                                        <constraint firstItem="tvL-xX-h3a" firstAttribute="leading" secondItem="oxE-Yu-vQH" secondAttribute="leadingMargin" id="5Xb-kI-XQZ"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="0sM-Sc-rZM" secondAttribute="bottom" id="6PC-WK-tWP"/>
+                                        <constraint firstItem="tvL-xX-h3a" firstAttribute="top" secondItem="oxE-Yu-vQH" secondAttribute="topMargin" id="DcT-9H-pqd"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="0sM-Sc-rZM" secondAttribute="trailing" id="P9U-5D-5hd"/>
+                                        <constraint firstItem="0sM-Sc-rZM" firstAttribute="leading" secondItem="oxE-Yu-vQH" secondAttribute="leadingMargin" id="V0P-lE-1g8"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="tvL-xX-h3a" secondAttribute="trailing" id="X6I-U9-1dq"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
