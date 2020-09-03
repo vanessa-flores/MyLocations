@@ -80,13 +80,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Photo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u8C-SS-PgU">
-                                                    <rect key="frame" x="16" y="11.5" width="81" height="21"/>
+                                                    <rect key="frame" x="16" y="11.5" width="304" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="u8C-SS-PgU" secondAttribute="trailing" constant="20" id="2ll-wM-joU"/>
                                                 <constraint firstItem="u8C-SS-PgU" firstAttribute="centerY" secondItem="m6r-tq-hwF" secondAttribute="centerY" id="MBT-6v-pmk"/>
                                                 <constraint firstItem="u8C-SS-PgU" firstAttribute="leading" secondItem="m6r-tq-hwF" secondAttribute="leadingMargin" id="ZBU-5j-Qhb"/>
                                             </constraints>
