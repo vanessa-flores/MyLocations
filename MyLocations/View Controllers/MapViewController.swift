@@ -22,10 +22,27 @@ class MapViewController: UIViewController {
     
     var managedObjectContext: NSManagedObjectContext! {
         didSet {
-            NotificationCenter.default.addObserver(forName: Notification.Name.NSManagedObjectContextObjectsDidChange, object: managedObjectContext, queue: OperationQueue.main) { _ in
+            NotificationCenter.default.addObserver(forName: Notification.Name.NSManagedObjectContextObjectsDidChange, object: managedObjectContext, queue: OperationQueue.main) { notification in
+                
+                var locations: [Location]?
+                
+                if let dictionary = notification.userInfo {
+                    if let locationObjects = dictionary[NSInsertedObjectsKey] as? Set<Location> {
+                        locations = locationObjects.map { $0 }
+                    }
+                    
+                    if let locationObjects = dictionary[NSUpdatedObjectsKey] as? Set<Location> {
+                        locations = locationObjects.map { $0 }
+                    }
+                    
+                    if let locationObjects = dictionary[NSDeletedObjectsKey] as? Set<Location> {
+                        locations = locationObjects.map { $0 }
+                    }
+                    
+                }
                 
                 if self.isViewLoaded {
-                    self.updateLocations()
+                    self.updateLocations(locations)
                 }
             }
         }
@@ -58,16 +75,24 @@ class MapViewController: UIViewController {
     // MARK: - Helpers
     
     private func updateLocations(_ locations: [Location]? = nil) {
-        let entity = Location.entity()
-        let fetchRequest = NSFetchRequest<Location>()
-        fetchRequest.entity = entity
         
-        if let newLocations = locations {
-            mapView.removeAnnotations(newLocations)
+        if let location = locations {
+            mapView.removeAnnotations(location)
+            
+            let entity = Location.entity()
+            
+            let fetchRequest = NSFetchRequest<Location>()
+            fetchRequest.entity = entity
+            
             self.locations = try! managedObjectContext.fetch(fetchRequest)
-            mapView.addAnnotations(newLocations)
+            mapView.addAnnotations(location)
         } else {
             mapView.removeAnnotations(self.locations)
+            
+            let entity = Location.entity()
+            
+            let fetchRequest = NSFetchRequest<Location>()
+            fetchRequest.entity = entity
             
             self.locations = try! managedObjectContext.fetch(fetchRequest)
             mapView.addAnnotations(self.locations)
