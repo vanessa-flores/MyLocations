@@ -475,6 +475,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="mapView" destination="gE1-Hc-DM0" id="viY-oG-gPW"/>
+                        <segue destination="Kqe-yw-hvg" kind="show" identifier="EditLocation" id="EFP-VP-J8E"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4nn-0y-BGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -557,7 +558,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="ZwF-Bl-YVQ"/>
+        <segue reference="EFP-VP-J8E"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="first" width="30" height="30"/>
