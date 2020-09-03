@@ -40,6 +40,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             navController = tabViewControllers[1] as! UINavigationController
             let locationsController = navController.viewControllers.first as! LocationsViewController
             locationsController.managedObjectContext = managedObjectContext
+            
+            // Third Tab
+            navController = tabViewControllers[2] as! UINavigationController
+            let mapController = navController.viewControllers.first as! MapViewController
+            mapController.managedObjectContext = managedObjectContext
         }
         
         listenForFatalCoreDataNotifications()

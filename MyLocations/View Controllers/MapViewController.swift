@@ -19,12 +19,14 @@ class MapViewController: UIViewController {
     // MARK: - Properties
     
     var managedObjectContext: NSManagedObjectContext!
+    var locations = [Location]()
     
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        updateLocations()
     }
     
     // MARK: - Actions
@@ -36,6 +38,19 @@ class MapViewController: UIViewController {
     
     @IBAction private func showLocations() {
         
+    }
+    
+    // MARK: - Helpers
+    
+    private func updateLocations() {
+        mapView.removeAnnotations(locations)
+        
+        let entity = Location.entity()
+        let fetchRequest = NSFetchRequest<Location>()
+        fetchRequest.entity = entity
+        
+        locations = try! managedObjectContext.fetch(fetchRequest)
+        mapView.addAnnotations(locations)
     }
     
 }
