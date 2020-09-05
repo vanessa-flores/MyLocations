@@ -46,11 +46,10 @@ class LocationDetailsViewController: UITableViewController {
             imageView.image = image
             imageView.isHidden = false
             addPhotoLabel.text = ""
-            imageHeight.constant = 260
             tableView.reloadData()
         }
     }
-    
+        
     var locationToEdit: Location? {
         didSet {
             if let location = locationToEdit {
@@ -107,6 +106,26 @@ class LocationDetailsViewController: UITableViewController {
         } else if indexPath.section == 1 && indexPath.row == 0 {
             tableView.deselectRow(at: indexPath, animated: true)
             pickPhoto()
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        let defaultHeight: CGFloat = 44.0
+        let descriptionHeight: CGFloat = 88.0
+        
+        if indexPath.section == 0 && indexPath.row == 0 {
+            return descriptionHeight
+        } else if indexPath.section == 1 && indexPath.row == 0 {
+            if let image = imageView.image {
+                let aspectRatio = image.size.width / image.size.height
+                let height = self.view.frame.width / aspectRatio
+
+                return height
+            } else {
+                return defaultHeight
+            }
+        } else {
+            return defaultHeight
         }
     }
     

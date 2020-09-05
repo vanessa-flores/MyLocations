@@ -86,20 +86,20 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="g7n-eu-SWT">
-                                                    <rect key="frame" x="16" y="11" width="324" height="22"/>
+                                                    <rect key="frame" x="44" y="11" width="260" height="22"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="22" id="wz1-ZF-xXF"/>
+                                                        <constraint firstAttribute="height" constant="22" id="sID-01-nPP"/>
+                                                        <constraint firstAttribute="width" constant="260" id="x3v-M5-VxS"/>
                                                     </constraints>
                                                 </imageView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="g7n-eu-SWT" firstAttribute="leading" secondItem="m6r-tq-hwF" secondAttribute="leadingMargin" id="4HT-Yc-Fji"/>
                                                 <constraint firstItem="u8C-SS-PgU" firstAttribute="leading" secondItem="m6r-tq-hwF" secondAttribute="leadingMargin" id="DaJ-A7-3Wv"/>
-                                                <constraint firstAttribute="bottomMargin" secondItem="g7n-eu-SWT" secondAttribute="bottom" id="PSA-D7-Kab"/>
+                                                <constraint firstItem="g7n-eu-SWT" firstAttribute="top" secondItem="m6r-tq-hwF" secondAttribute="topMargin" id="MfB-EF-VYY"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="g7n-eu-SWT" secondAttribute="bottom" id="XIo-VB-yYc"/>
                                                 <constraint firstItem="u8C-SS-PgU" firstAttribute="bottom" secondItem="m6r-tq-hwF" secondAttribute="bottomMargin" id="gHb-F7-Qwz"/>
                                                 <constraint firstItem="u8C-SS-PgU" firstAttribute="top" secondItem="m6r-tq-hwF" secondAttribute="topMargin" id="kZs-Sf-qVr"/>
-                                                <constraint firstItem="g7n-eu-SWT" firstAttribute="top" secondItem="m6r-tq-hwF" secondAttribute="topMargin" id="mjb-TR-w4x"/>
-                                                <constraint firstItem="g7n-eu-SWT" firstAttribute="trailing" secondItem="m6r-tq-hwF" secondAttribute="trailingMargin" id="zuf-h6-Qjn"/>
+                                                <constraint firstItem="g7n-eu-SWT" firstAttribute="centerX" secondItem="m6r-tq-hwF" secondAttribute="centerX" id="p9C-qz-cW2"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -234,7 +234,7 @@
                         <outlet property="categoryLabel" destination="JAV-nJ-Hmo" id="AaX-eO-sc5"/>
                         <outlet property="dateLabel" destination="k23-Zy-QWH" id="V7C-aO-aJF"/>
                         <outlet property="descriptionTextView" destination="fQs-DM-1WP" id="LQu-K7-AfP"/>
-                        <outlet property="imageHeight" destination="wz1-ZF-xXF" id="3xM-qn-kzF"/>
+                        <outlet property="imageHeight" destination="sID-01-nPP" id="e0Y-qa-WuJ"/>
                         <outlet property="imageView" destination="g7n-eu-SWT" id="Ie7-Iy-Htz"/>
                         <outlet property="latitudeLabel" destination="UQY-dM-uZR" id="vjM-CC-2FY"/>
                         <outlet property="longitudeLabel" destination="g20-gz-0a6" id="WNb-Sh-5WG"/>
