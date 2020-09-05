@@ -40,6 +40,7 @@ class LocationDetailsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
     var descriptionText = ""
+    var observer: Any!
     
     var image: UIImage? {
         didSet {
@@ -214,13 +215,19 @@ class LocationDetailsViewController: UITableViewController {
     }
     
     private func listenForBackgroundNotification() {
-        NotificationCenter.default.addObserver(forName: UIScene.didEnterBackgroundNotification, object: nil, queue: OperationQueue.main) { _ in
+        observer = NotificationCenter.default.addObserver(forName: UIScene.didEnterBackgroundNotification, object: nil, queue: OperationQueue.main) { [weak self] _ in
+            guard let self = self else { return }
+            
             if self.presentedViewController != nil {
                 self.dismiss(animated: false, completion: nil)
             }
             
             self.descriptionTextView.resignFirstResponder()
         }
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(observer)
     }
     
     // MARK: - Navigation
