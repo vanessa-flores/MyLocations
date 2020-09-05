@@ -92,8 +92,8 @@ class LocationDetailsViewController: UITableViewController {
         if indexPath.section == 0 && indexPath.row == 0 {
             descriptionTextView.becomeFirstResponder()
         } else if indexPath.section == 1 && indexPath.row == 0 {
-//            takePhotoWithCamera()
-            choosePhotoFromLibrary()
+            tableView.deselectRow(at: indexPath, animated: true)
+            pickPhoto()
         }
     }
     
@@ -194,7 +194,7 @@ class LocationDetailsViewController: UITableViewController {
 extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     // MARK: - Image helper methods
     
-    func takePhotoWithCamera() {
+    private func takePhotoWithCamera() {
             let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .camera
         imagePicker.delegate = self
@@ -202,12 +202,36 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
         present(imagePicker, animated: true, completion: nil)
     }
     
-    func choosePhotoFromLibrary() {
+    private func choosePhotoFromLibrary() {
         let imagePicker = UIImagePickerController()
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    private func pickPhoto() {
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            showPhotoMenu()
+        } else {
+            choosePhotoFromLibrary()
+        }
+    }
+    
+    private func showPhotoMenu() {
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        let actionCancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(actionCancel)
+        let actionPhoto = UIAlertAction(title: "Take Photo", style: .default, handler: { _ in
+            self.takePhotoWithCamera()
+        })
+        alert.addAction(actionPhoto)
+        let actionLibrary = UIAlertAction(title: "Choose From Library", style: .default, handler: { _ in
+            self.choosePhotoFromLibrary()
+        })
+        alert.addAction(actionLibrary)
+        
+        present(alert, animated: true, completion: nil)
     }
     
     // MARK: - UIImagePickerControllerDelegate
