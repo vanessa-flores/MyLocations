@@ -234,6 +234,7 @@
                         <outlet property="categoryLabel" destination="JAV-nJ-Hmo" id="AaX-eO-sc5"/>
                         <outlet property="dateLabel" destination="k23-Zy-QWH" id="V7C-aO-aJF"/>
                         <outlet property="descriptionTextView" destination="fQs-DM-1WP" id="LQu-K7-AfP"/>
+                        <outlet property="imageHeight" destination="wz1-ZF-xXF" id="3xM-qn-kzF"/>
                         <outlet property="imageView" destination="g7n-eu-SWT" id="Ie7-Iy-Htz"/>
                         <outlet property="latitudeLabel" destination="UQY-dM-uZR" id="vjM-CC-2FY"/>
                         <outlet property="longitudeLabel" destination="g20-gz-0a6" id="WNb-Sh-5WG"/>

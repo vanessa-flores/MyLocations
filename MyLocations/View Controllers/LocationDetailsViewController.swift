@@ -30,6 +30,7 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet private weak var dateLabel: UILabel!
     @IBOutlet private weak var imageView: UIImageView!
     @IBOutlet private weak var addPhotoLabel: UILabel!
+    @IBOutlet private weak var imageHeight: NSLayoutConstraint!
     
     // MARK: - Properties
     
@@ -186,6 +187,8 @@ class LocationDetailsViewController: UITableViewController {
         imageView.image = image
         imageView.isHidden = false
         addPhotoLabel.text = ""
+        imageHeight.constant = 260
+        tableView.reloadData()
     }
     
     // MARK: - Navigation
