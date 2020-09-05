@@ -28,6 +28,8 @@ class LocationDetailsViewController: UITableViewController {
     @IBOutlet private weak var longitudeLabel: UILabel!
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var dateLabel: UILabel!
+    @IBOutlet private weak var imageView: UIImageView!
+    @IBOutlet private weak var addPhotoLabel: UILabel!
     
     // MARK: - Properties
     
@@ -37,6 +39,7 @@ class LocationDetailsViewController: UITableViewController {
     var managedObjectContext: NSManagedObjectContext!
     var date = Date()
     var descriptionText = ""
+    var image: UIImage?
     
     var locationToEdit: Location? {
         didSet {
@@ -179,6 +182,12 @@ class LocationDetailsViewController: UITableViewController {
         return dateFormatter.string(from: date)
     }
     
+    func show(image: UIImage) {
+        imageView.image = image
+        imageView.isHidden = false
+        addPhotoLabel.text = ""
+    }
+    
     // MARK: - Navigation
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -237,6 +246,12 @@ extension LocationDetailsViewController: UIImagePickerControllerDelegate, UINavi
     // MARK: - UIImagePickerControllerDelegate
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        image = info[UIImagePickerController.InfoKey.editedImage] as? UIImage
+        
+        if let finalImage = image {
+            show(image: finalImage)
+        }
+        
         dismiss(animated: true, completion: nil)
     }
     
