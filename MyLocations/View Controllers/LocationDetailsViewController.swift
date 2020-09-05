@@ -70,6 +70,12 @@ class LocationDetailsViewController: UITableViewController {
         
         if let location = locationToEdit {
             title = "Edit Location"
+            
+            if location.hasPhoto {
+                if let savedImage = location.photoImage {
+                    show(image: savedImage)
+                }
+            }
         }
         
         descriptionTextView.text = descriptionText
@@ -227,6 +233,13 @@ class LocationDetailsViewController: UITableViewController {
     
     private func format(date: Date) -> String {
         return dateFormatter.string(from: date)
+    }
+    
+    private func show(image: UIImage) {
+        imageView.image = image
+        imageView.isHidden = false
+        addPhotoLabel.text = ""
+        tableView.reloadData()
     }
     
     private func listenForBackgroundNotification() {
