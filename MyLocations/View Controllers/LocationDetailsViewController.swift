@@ -88,6 +88,8 @@ class LocationDetailsViewController: UITableViewController {
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
         gestureRecognizer.cancelsTouchesInView = false
         tableView.addGestureRecognizer(gestureRecognizer)
+        
+        listenForBackgroundNotification()
     }
     
     // MARK: - UITableViewDelegate
@@ -209,6 +211,16 @@ class LocationDetailsViewController: UITableViewController {
     
     private func format(date: Date) -> String {
         return dateFormatter.string(from: date)
+    }
+    
+    private func listenForBackgroundNotification() {
+        NotificationCenter.default.addObserver(forName: UIScene.didEnterBackgroundNotification, object: nil, queue: OperationQueue.main) { _ in
+            if self.presentedViewController != nil {
+                self.dismiss(animated: false, completion: nil)
+            }
+            
+            self.descriptionTextView.resignFirstResponder()
+        }
     }
     
     // MARK: - Navigation
