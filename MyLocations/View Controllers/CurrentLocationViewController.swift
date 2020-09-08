@@ -22,6 +22,7 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet private weak var getButton: UIButton!
     @IBOutlet private weak var latitudeTextLabel: UILabel!
     @IBOutlet private weak var longitudeTextLabel: UILabel!
+    @IBOutlet private weak var containerView: UIView!
     
     // MARK: - Properties
     
@@ -35,6 +36,18 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     var lastGeocodingError: Error?
     var timer: Timer?
     var managedObjectContext: NSManagedObjectContext!
+    var logoVisible = false
+    
+    lazy var logoButton: UIButton = {
+        let button = UIButton(type: .custom)
+        button.setBackgroundImage(UIImage(named: "Logo"), for: .normal)
+        button.sizeToFit()
+        button.addTarget(self, action: #selector(getLocation), for: .touchUpInside)
+        button.center.x = self.view.bounds.midX
+        button.center.y = 220
+        
+        return button
+    }()
     
     
     // MARK: - Lifecycle
@@ -207,7 +220,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else if updatingLocation {
                 statusMessage = "Searching..."
             } else {
-                statusMessage = "Tap 'Get My Location' to Start"
+                statusMessage = ""
+                showLogoView()
             }
             
             messageLabel.text = statusMessage
@@ -271,6 +285,14 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             stopLocationManager()
             lastLocationError = NSError(domain: "MyLocationsErrorDomain", code: 1, userInfo: nil)
             updateLabels()
+        }
+    }
+    
+    private func showLogoView() {
+        if !logoVisible {
+            logoVisible = true
+            containerView.isHidden = true
+            view.addSubview(logoButton)
         }
     }
     
