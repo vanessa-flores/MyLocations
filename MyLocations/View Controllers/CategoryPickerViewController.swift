@@ -61,6 +61,9 @@ class CategoryPickerViewController: UITableViewController {
             cell.accessoryType = .none
         }
         
+        let selection = UIView(frame: CGRect.zero)
+        selection.backgroundColor = UIColor(white: 1.0, alpha: 0.3)
+        
         return cell
     }
     
