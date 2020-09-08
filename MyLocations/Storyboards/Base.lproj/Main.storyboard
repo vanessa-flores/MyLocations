@@ -402,7 +402,9 @@
                         <outlet property="addressLabel" destination="wEc-7O-5Rl" id="RDN-Bs-fX9"/>
                         <outlet property="getButton" destination="rRx-to-aDm" id="xNv-IV-FKj"/>
                         <outlet property="latitudeLabel" destination="zCf-7C-ear" id="Qgp-Ar-OxO"/>
+                        <outlet property="latitudeTextLabel" destination="AgB-cF-v6D" id="AqQ-Wx-THm"/>
                         <outlet property="longitudeLabel" destination="kex-PR-3Tm" id="Oj4-Vo-V35"/>
+                        <outlet property="longitudeTextLabel" destination="UtY-mL-Jyi" id="Rmb-AF-hcR"/>
                         <outlet property="messageLabel" destination="Ymr-CT-S0t" id="ReF-2V-qGQ"/>
                         <outlet property="tagButton" destination="JjC-cF-3a4" id="STh-cH-Wry"/>
                     </connections>

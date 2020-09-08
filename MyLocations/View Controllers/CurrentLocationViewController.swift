@@ -20,6 +20,8 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
     @IBOutlet private weak var addressLabel: UILabel!
     @IBOutlet private weak var tagButton: UIButton!
     @IBOutlet private weak var getButton: UIButton!
+    @IBOutlet private weak var latitudeTextLabel: UILabel!
+    @IBOutlet private weak var longitudeTextLabel: UILabel!
     
     // MARK: - Properties
     
@@ -184,6 +186,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             } else {
                 addressLabel.text = "No Address Found"
             }
+            
+            latitudeTextLabel.isHidden = false
+            longitudeTextLabel.isHidden = false
         } else {
             latitudeLabel.text = ""
             longitudeLabel.text = ""
@@ -206,6 +211,9 @@ class CurrentLocationViewController: UIViewController, CLLocationManagerDelegate
             }
             
             messageLabel.text = statusMessage
+            
+            latitudeTextLabel.isHidden = true
+            longitudeTextLabel.isHidden = true
         }
         
         configureGetButton()
