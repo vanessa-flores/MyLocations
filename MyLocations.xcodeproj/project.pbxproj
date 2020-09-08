@@ -19,6 +19,7 @@
 		A33FEE232507D89400316B54 /* String+AddText.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE222507D89400316B54 /* String+AddText.swift */; };
 		A33FEE252507E28D00316B54 /* MyTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE242507E28D00316B54 /* MyTabBarController.swift */; };
 		A33FEE272507E35A00316B54 /* MyImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A33FEE262507E35A00316B54 /* MyImagePickerController.swift */; };
+		A33FEE2A2508202D00316B54 /* Sound.caf in Resources */ = {isa = PBXBuildFile; fileRef = A33FEE292508202D00316B54 /* Sound.caf */; };
 		A3B5C90C24FEA83E00864F73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */; };
 		A3B5C90E24FEA83E00864F73 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */; };
 		A3B5C91024FEA83E00864F73 /* CurrentLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B5C90F24FEA83E00864F73 /* CurrentLocationViewController.swift */; };
@@ -42,6 +43,7 @@
 		A33FEE222507D89400316B54 /* String+AddText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+AddText.swift"; sourceTree = "<group>"; };
 		A33FEE242507E28D00316B54 /* MyTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyTabBarController.swift; sourceTree = "<group>"; };
 		A33FEE262507E35A00316B54 /* MyImagePickerController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyImagePickerController.swift; sourceTree = "<group>"; };
+		A33FEE292508202D00316B54 /* Sound.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Sound.caf; sourceTree = "<group>"; };
 		A3B5C90824FEA83E00864F73 /* MyLocations.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyLocations.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A3B5C90B24FEA83E00864F73 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A3B5C90D24FEA83E00864F73 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		A33FEE282508202D00316B54 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A33FEE292508202D00316B54 /* Sound.caf */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		A3B5C8FF24FEA83E00864F73 = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +172,7 @@
 			isa = PBXGroup;
 			children = (
 				A3B5C91624FEA84100864F73 /* Assets.xcassets */,
+				A33FEE282508202D00316B54 /* Sound */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -235,6 +246,7 @@
 			files = (
 				A3B5C91A24FEA84100864F73 /* LaunchScreen.storyboard in Resources */,
 				A3B5C91724FEA84100864F73 /* Assets.xcassets in Resources */,
+				A33FEE2A2508202D00316B54 /* Sound.caf in Resources */,
 				A3B5C91524FEA83E00864F73 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
